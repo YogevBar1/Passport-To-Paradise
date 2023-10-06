@@ -1,0 +1,14 @@
+.Home {
+    font-size: 20px;
+}
+
+.Home p {
+    margin: 20px;
+    padding: 20px; 
+}
+
+.Home img {
+    width: 50%;
+    max-width: 30%;
+    height: auto;
+}

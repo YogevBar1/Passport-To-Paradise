@@ -1,0 +1,191 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 04, 2023 at 10:21 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `passport_to_paradise`
+--
+CREATE DATABASE IF NOT EXISTS `passport_to_paradise` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `passport_to_paradise`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `followers`
+--
+
+CREATE TABLE `followers` (
+  `userId` int(11) NOT NULL,
+  `vacationId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `followers`
+--
+
+INSERT INTO `followers` (`userId`, `vacationId`) VALUES
+(15, 5),
+(7, 9),
+(27, 6),
+(27, 5),
+(25, 3),
+(25, 8),
+(28, 3),
+(29, 6),
+(29, 3),
+(29, 9),
+(29, 65),
+(31, 11);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `userId` int(11) NOT NULL,
+  `firstName` varchar(30) NOT NULL,
+  `lastName` varchar(30) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `roleId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userId`, `firstName`, `lastName`, `email`, `password`, `roleId`) VALUES
+(5, 'Yogev', 'Bar', 'yogevBar12@gmail.com', 'b220801700bd09c1f9c5d6d8409223ae5c45e86beef16972684640cf6353', 2),
+(6, 'Avi', 'Bar', 'yogevBar123@gmail.com', 'b220801700bd09c1f9c5d6d8409223ae5c45e86beef16972684640cf6353', 2),
+(7, 'Gaby', 'Bar', 'gaby123@gmail.com', 'b220801700bd09c1f9c5d6d8409223ae5c45e86beef16972684640cf6353', 2),
+(8, 'Gaby', 'Bar', 'gaby1234@gmail.com', 'b220801700bd09c1f9c5d6d8409223ae5c45e86beef16972684640cf6353', 2),
+(9, 'Gaby', 'Bar', 'gaby12345@gmail.com', '580f0d7c638548158a7d78f7d79ddfbb0e31f17ee0699208e8387ae7c73a', 2),
+(10, 'Gaby', 'Bar', 'gaby123456@gmail.com', '580f0d7c638548158a7d78f7d79ddfbb0e31f17ee0699208e8387ae7c73a', 2),
+(11, 'Gaby', 'Bar', 'hudc@gmail.com', 'b220801700bd09c1f9c5d6d8409223ae5c45e86beef16972684640cf6353', 2),
+(12, 'Gaby', 'Bar', 'hudc1@gmail.com', '2fc4f5439caa25aa6be9e05ebba5139b8c34b8863ea83b783bcfb43bfe8f', 2),
+(13, 'Gaby', 'Bar', 'hudc12@gmail.com', '2fc4f5439caa25aa6be9e05ebba5139b8c34b8863ea83b783bcfb43bfe8fe5d958f8420957bbf4e448769d6b4ec7fdea0fd1ca656173bff5a067ece58d3a3d56', 2),
+(14, 'Gaby', 'Bar', 'hudc122@gmail.com', '2fc4f5439caa25aa6be9e05ebba5139b8c34b8863ea83b783bcfb43bfe8fe5d958f8420957bbf4e448769d6b4ec7fdea0fd1ca656173bff5a067ece58d3a3d56', 2),
+(15, 'Gaby', 'Bar', 'admin@gmail.com', '215034b20f4cf1f94908a4f7d0fbe8b025bcd248688c3d18bf93579c5e0e46ae6618db1d99c16cece851027780511670fef3d30446a06a65d866c8ad6b394d39', 2),
+(16, 'Gaby', 'Bar', 'admin1@gmail.com', 'd19d4cf707e17051611f1f0b82b904666a58aef03d4ce0f2dd1fa6799247f9f7433eee88365975ca17feefd725c52dae24d8d8327c439b9c2c0440468c3aac29', 1),
+(17, 'Yogev', 'Bar', 'yogevbar2@gmail.com', '837b1564c3d1cba77899763de1ed8ade92dba9d2dc2023e2b9be1047630bffa777f1cd9561d1bc2fbbdc65b07366c8645ba3d58b4f2c8fe70d3d9034d292c89f', 2),
+(18, 'aעכיכעיכיע', 'afdsfd', 'sa@dsdfsdf', '9b2f3b7a6583343d38c01a88c0276ebae9ef39021db32efb8508f7731d7eccded91c38f12145511bc1aa7c94d527f28cc824c9c7cb8ee77bdfa227d030c50a5e', 2),
+(19, 'adsf', 'asds', 'sa@sd', '335e4ceece4078ea8d234cb631d5618d2ae3bed2ff5b0283da5390d661b456388202eee0e1a1c48e2dfd14950b6ebf60cf19623254a3a4aaa4d5e8fae220cba2', 2),
+(20, 'adfg', 'afgd', 'aaa@fdsfdg', 'a9614ee03583d5d1bf5d0d40c5d47133507155113ef8670de1acdddabf4af6f9cb19ec0dbbba24d1e7dea70eba73c6bf9a239c92a9df1b5caa1af7c04f61f133', 2),
+(21, 'yoni', 'saadon', 'yoni@gmail.com', 'b220801700bd09c1f9c5d6d8409223ae5c45e86beef16972684640cf6353e418f45efcc48c873dfc00652fde32b0da333a04242817ea8a467eeb58acd1ada295', 2),
+(22, 'eitan', 'azulay', 'eitan@gmail.com', 'a7beec86b5eef2b43fdbe03f371a6b83d9b93ae382b401b48cc124fcd174ed76d69bc677992501427c3b1912ea94fa65a78e9d101b48012b7ef4fc3c7ceef3b2', 2),
+(23, 'gaby', 'alboim', 'gaby@gmail.com', '2c016f248a84cba7d535106829f63ff48612dbb0c9d537dc919c5b11cdb7ac6b36690336e467c88ce7e2ae15fc6667f7c469854ffd7a5113938264c8f0434fbe', 2),
+(24, 'aaaaaa', 'aavvvvvvvv', 'aaaaaaaa@gmail.com', '6a426c1f9acbaa62b36f5ee1734c3b7c55e0bc567fdc8c4bb988d9507ff3a89c308e22729011ee7a10d5c20a2d678755f493578912db1744f1cd0c1f06ad4413', 2),
+(25, 'aaaa', 'aaaaaaaaaaaaaaaa', 'aaaaa@aaaaaaaa.aaaaaaaaaa', 'e0e94cbdb8987339baefa8418e82dcb76338b83c2f4d43f4aa66e3d2269b21f2fff5a0661c85207db6d6d6901f5ddab378b269aca7e9ed46dd1627bc2ee419bd', 1),
+(26, 'hudc', 'cr', 'hudc123@gmail.com', '23b3fb16608ded5a5ff135b058e75eae1b32724065460758a10545dc60dc907910e9ab94824c09dca3c800d62e862a902e89acd85a000e2971355518b8265ba4', 2),
+(27, 'aaaaaaa', 'aaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaa@bbb', 'feb392bb0d21b00b5e1e3adaf1dce7aa26dde6ac28c56e38a2606667f21b03c6599d0d0f29e53aca55c2569ebd0672f90824f6b01fd11a6273a5ac2a5390c341', 1),
+(28, 'yogbar@gmail.com', 'yogbar@gmail.com', 'yogbar@gmail.com', 'a4779b1c0425fc2f62c9c2fef33c25934d691ddf1f25b319e0c0722d55b61185d0ec60d1dba3b9a27da26acf58882cbcb25d6aceaf86f072a5c8cf5869b7e864', 2),
+(29, 'Michal', 'Bar', 'mihchalbar@walla.com', '4e668ddf9562c69838d187722f8555603482b49ce0abdb22015dbb71ea13aba5acdc9e5f3e839c3c6bf4f7917e838f4fef634b03bd9141e28455715f07668707', 2),
+(30, 'Yogev', 'Admin', 'admin2@gmail.com', 'f900f9953f25c000c94c77fc95376ec5b404f00e6a4c82508b504f7c074cd7e293d9cbba67c322dbf7a323e511863a1d7fcc49544075f05868ff57229ae5b9b7', 1),
+(31, 'ahron', 'bar', 'Aharon@gmail.com', '483c8b01206b1caa7b9e034dd84751a9278c2e11df8619e4f7c10692a0197202ec2bdc3b91fb0bdc378ebe33a00b8519cf0f9308f99f150efc81b54537c46b9a', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vacations`
+--
+
+CREATE TABLE `vacations` (
+  `vacationId` int(11) NOT NULL,
+  `vacationDestination` varchar(50) NOT NULL,
+  `vacationDescription` varchar(250) NOT NULL,
+  `vacationStartDate` date NOT NULL,
+  `vacationEndDate` date NOT NULL,
+  `vacationPrice` decimal(6,2) NOT NULL,
+  `imageUrl` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vacations`
+--
+
+INSERT INTO `vacations` (`vacationId`, `vacationDestination`, `vacationDescription`, `vacationStartDate`, `vacationEndDate`, `vacationPrice`, `imageUrl`) VALUES
+(3, 'Madrid', 'In the heart of Spain, Madrid stands as a dynamic blend of history and modernity. With its royal palaces, world-renowned art museums like the Prado and Reina Sofía, and a thriving culinary scene offering tapas to haute cuisine.', '2023-08-22', '2023-08-31', 4000.00, 'madrid.jpg'),
+(5, 'Budapest', 'Budapest, a tapestry of history and thermal wonders. Explore Buda Castle, soak in Széchenyi Baths, and cruise the Danube for panoramic views. Budapest\'s charm lies in its architectural gems, both Gothic and Art Nouveau, and a vibrant nightlife along ', '2023-09-22', '2023-10-02', 4550.00, 'Budapest.jpg'),
+(6, 'Prague', 'Prague, a fairytale city. Wander Charles Bridge, admire Prague Castle\'s grandeur, and embrace Old Town\'s charm. Unveil history in every cobblestone.', '2023-08-22', '2023-08-31', 5555.00, 'Prague‪.jpeg'),
+(7, 'Tokyo', 'A blend of tradition and technology. Explore Senso-ji Temple, Shibuya Crossing, and savor sushi at Tsukiji Market.', '2023-08-30', '2023-09-11', 4800.00, '67d11011-5ac6-4172-889e-064de15468a6.jpeg'),
+(8, 'Rome', 'The Eternal City\'s allure. Marvel at the Colosseum, toss coins in Trevi Fountain, and relish pasta in charming trattorias.\r\n\r\n', '2023-08-30', '2023-09-10', 5800.00, 'Rome.jpeg'),
+(9, 'Cape Town', 'A tapestry of landscapes. Ascend Table Mountain, explore Robben Island\'s history, and unwind on Camps Bay\'s shores.\r\n\r\n\r\n\r\n\r\n', '2023-10-05', '2023-11-01', 8800.00, 'Cape Town.jpeg'),
+(10, 'Venice', 'A city on water. Drift through canals in gondolas, admire St. Mark\'s Basilica, and savor Venetian cuisine in hidden alleys.\r\n\r\n', '2023-09-07', '2023-09-21', 7500.00, 'Venice.jpeg'),
+(11, 'Hong Kong', 'East-meets-West dynamism. Ascend Victoria Peak, explore bustling markets, and savor a fusion of culinary delights.\r\n\r\n\r\n\r\n\r\n', '2023-08-30', '2023-09-20', 8700.00, 'Hong Kong.jpeg'),
+(12, 'Amsterdam', 'Canals and culture intertwine. Cycle along picturesque waterways, visit Anne Frank House, and admire Van Gogh\'s masterpieces.\r\n\r\n', '2023-10-06', '2023-10-18', 7700.00, 'Amsterdam.jpeg'),
+(13, 'Berlin', 'Layers of history and creativity. Explore Brandenburg Gate, visit East Side Gallery, and indulge in Berlin\'s vibrant nightlife.\r\n\r\n', '2023-10-06', '2023-10-22', 9900.00, 'Berlin.jpeg'),
+(64, 'Haifa', 'Haifa boasts a picturesque vacation spot, nestled between the stunning Carmel Mountains and the Mediterranean Sea, offering a blend of natural beauty and cultural attractions.', '2023-10-14', '2023-10-28', 1234.00, '3e287e6f-e325-4360-8c52-72da7e2b9820.jpeg'),
+(65, 'Tel Aviv', 'Tel Aviv offers a vibrant and sunny vacation destination, with beautiful beaches, rich cultural experiences, and a lively nightlife', '2023-10-13', '2023-11-11', 3333.00, 'b0e13ffe-1980-488d-a619-8de3cc49e056.jpg'),
+(66, 'Jerusalem', 'Jerusalem old city', '2023-10-03', '2023-11-23', 8500.00, '71e0a21e-bea5-410a-9113-f387d5169089.jpeg');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `followers`
+--
+ALTER TABLE `followers`
+  ADD KEY `userId` (`userId`),
+  ADD KEY `vacationId` (`vacationId`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userId`);
+
+--
+-- Indexes for table `vacations`
+--
+ALTER TABLE `vacations`
+  ADD PRIMARY KEY (`vacationId`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `vacations`
+--
+ALTER TABLE `vacations`
+  MODIFY `vacationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `followers`
+--
+ALTER TABLE `followers`
+  ADD CONSTRAINT `followers_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `followers_ibfk_2` FOREIGN KEY (`vacationId`) REFERENCES `vacations` (`vacationId`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

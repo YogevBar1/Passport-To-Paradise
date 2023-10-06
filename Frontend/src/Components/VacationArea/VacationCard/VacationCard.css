@@ -1,0 +1,70 @@
+/* Remove the background-image and adjust padding and margins */
+.VacationCard {
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Adjust image size and add some margin for spacing */
+.VacationCard img {
+    width: 100%;
+    max-height: 200px;
+    /* Adjust the maximum height as needed */
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    /* Add margin for spacing below the image */
+}
+
+/* Center align text content */
+.VacationCard>div:last-child {
+    text-align: center;
+}
+
+/* Create a grid layout for the vacation cards */
+.vacation-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Create 3 columns */
+    gap: 20px;
+    /* Add gap between cards */
+    justify-items: center;
+    /* Center-align the cards horizontally */
+    align-content: space-between;
+    /* Space-between rows */
+    height: 100%;
+    margin: 20px;
+}
+
+/* Ensure each card takes equal height */
+.vacation-card-grid .VacationCard {
+    height: auto;
+}
+
+.VacationCard button.unfollow {
+    background-color: #dc3545;
+    /* Button color for "Unfollow" state */
+}
+
+/* Change button text color for "Unfollow" state */
+.VacationCard button.unfollow:hover {
+    background-color: #c82333;
+    /* Hover effect for "Unfollow" state */
+}
+
+/* Style for "Follow" state when the button is hovered */
+.VacationCard button:hover:not(.unfollow) {
+    background-color: #0056b3;
+    /* Hover effect for "Follow" state */
+}
+
+/* Center align text content */
+.VacationCard>div:last-child {
+    text-align: center;
+}

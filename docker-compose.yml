@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./Frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./Backend
+    ports:
+      - "8080:8080"
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=your-mysql-password
+      - MYSQL_DATABASE=passport_to_paradise
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: your-mysql-root-password
+      MYSQL_USER: root
+      MYSQL_PASSWORD: your-mysql-password
+      MYSQL_DATABASE: passport_to_paradise
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+  initdb:
+    image: mysql:latest
+    command: ["sh", "-c", "mysql -hmysql -u${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE} < /docker-entrypoint-initdb.d/passport_to_paradise.sql"]
+    volumes:
+      - ./Database/passport_to_paradise.sql:/docker-entrypoint-initdb.d/passport_to_paradise.sql
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
