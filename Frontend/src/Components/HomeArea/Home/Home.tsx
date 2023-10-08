@@ -5,7 +5,7 @@ function Home(): JSX.Element {
     return (
         <div className="Home">
             <h2>About</h2>
-            <img src={imageSource}></img>
+            <img src={imageSource} alt="Passport To Paradise Logo" />
             <br></br>
             <p>Welcome to Passport To Paradise, your gateway to unforgettable journeys and remarkable adventures across the globe. At Passport To Paradise, we believe that travel is not just a hobby; it's a transformative experience that enriches your life in countless ways. Our mission is to make your travel dreams come true by providing you with the resources, inspiration, and support you need to explore the world's most incredible destinations.
 

@@ -89,7 +89,7 @@ function VacationCard(props: VacationCardProps): JSX.Element {
 
             <div>
                 <h5>{props.vacation?.vacationDestination}</h5>
-                <p>{props.vacation?.vacationDescription}</p>
+                <p className="vacationDescription">{props.vacation?.vacationDescription}</p>
                 <p>
                     <strong>Start Date:</strong>{" "}
                     {new Date(props.vacation?.vacationStartDate).toLocaleDateString()}

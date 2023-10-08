@@ -3,6 +3,8 @@ import VacationModel from "../Models/VacationModel";
 import { authStore } from "../Redux/AuthState";
 import { VacationAction, VacationsActionType, vacationStore } from "../Redux/VacationState";
 import appConfig from "../Utils/AppConfig";
+import { log } from "console";
+import notifyService from "./NotifyService";
 
 class VacationsService {
 
@@ -25,7 +27,7 @@ class VacationsService {
         vacationStore.dispatch(action);
 
     }
-    
+
     public async getFollowedVacations(userId: number): Promise<VacationModel[]> {
 
         const options = {
@@ -38,6 +40,7 @@ class VacationsService {
     }
 
     public async editVacation(vacation: VacationModel): Promise<VacationModel> {
+
         const options = {
             headers: {
                 "Authorization": "Bearer " + authStore.getState().token,
@@ -63,6 +66,8 @@ class VacationsService {
         vacationStore.dispatch(action);
 
         return editedVacation;
+
+
     }
 
     //Get one Vacation from the backend:

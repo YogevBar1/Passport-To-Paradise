@@ -230,7 +230,10 @@ function ListVacation(): JSX.Element {
 
             <div>
                 {user && user.roleId === RoleModel.Admin && (
-                    <button onClick={handleDownloadCSV}>Download CSV file</button>
+                    <button 
+                    onClick={handleDownloadCSV}
+                    className="btn btn-primary"
+                    >Download CSV file</button>
                 )}
             </div>
 
