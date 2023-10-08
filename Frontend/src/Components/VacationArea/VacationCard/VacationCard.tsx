@@ -42,7 +42,9 @@ function VacationCard(props: VacationCardProps): JSX.Element {
             .catch((error) => {
                 console.error("Error checking follow status:", error);
             });
-    }, [props.vacation.followersCount]); // Add props.vacation.vacationId as a dependency
+        // }, [props.vacation.followersCount]); // Add props.vacation.vacationId as a dependency
+    }, [props.vacation.vacationId, userId]);
+
 
     // Function to handle follow/unfollow button click
     function handleFollowClick() {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2023 at 10:21 AM
+-- Generation Time: Oct 07, 2023 at 04:37 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,7 +50,40 @@ INSERT INTO `followers` (`userId`, `vacationId`) VALUES
 (29, 3),
 (29, 9),
 (29, 65),
-(31, 11);
+(31, 11),
+(33, 3),
+(33, 11),
+(33, 7),
+(33, 8),
+(33, 6),
+(34, 6),
+(34, 3),
+(34, 11),
+(34, 7),
+(34, 8),
+(34, 10),
+(34, 9),
+(34, 5),
+(34, 66),
+(34, 12),
+(34, 13),
+(34, 65),
+(34, 64),
+(35, 6),
+(36, 64),
+(38, 3),
+(38, 5),
+(38, 9),
+(38, 6),
+(38, 11),
+(39, 8),
+(39, 11),
+(41, 8),
+(41, 11),
+(41, 7),
+(41, 13),
+(41, 66),
+(41, 5);
 
 -- --------------------------------------------------------
 
@@ -98,7 +131,17 @@ INSERT INTO `users` (`userId`, `firstName`, `lastName`, `email`, `password`, `ro
 (28, 'yogbar@gmail.com', 'yogbar@gmail.com', 'yogbar@gmail.com', 'a4779b1c0425fc2f62c9c2fef33c25934d691ddf1f25b319e0c0722d55b61185d0ec60d1dba3b9a27da26acf58882cbcb25d6aceaf86f072a5c8cf5869b7e864', 2),
 (29, 'Michal', 'Bar', 'mihchalbar@walla.com', '4e668ddf9562c69838d187722f8555603482b49ce0abdb22015dbb71ea13aba5acdc9e5f3e839c3c6bf4f7917e838f4fef634b03bd9141e28455715f07668707', 2),
 (30, 'Yogev', 'Admin', 'admin2@gmail.com', 'f900f9953f25c000c94c77fc95376ec5b404f00e6a4c82508b504f7c074cd7e293d9cbba67c322dbf7a323e511863a1d7fcc49544075f05868ff57229ae5b9b7', 1),
-(31, 'ahron', 'bar', 'Aharon@gmail.com', '483c8b01206b1caa7b9e034dd84751a9278c2e11df8619e4f7c10692a0197202ec2bdc3b91fb0bdc378ebe33a00b8519cf0f9308f99f150efc81b54537c46b9a', 2);
+(31, 'ahron', 'bar', 'Aharon@gmail.com', '483c8b01206b1caa7b9e034dd84751a9278c2e11df8619e4f7c10692a0197202ec2bdc3b91fb0bdc378ebe33a00b8519cf0f9308f99f150efc81b54537c46b9a', 2),
+(32, 'Roi', 'maman', 'roiiiiiii@asaddas', '5f73b618badebc594c70335415dc5ebd6f733cdc6e0bb2aca466363430bb508fc5b3b0f7002452f64ebd1bc8f95951c3204de2f88a52a8bc9e5c189ef9709204', 2),
+(33, 'Roy', 'Mamman', 'RoyMamman@gmail.com', '1c58a64026b5e91c869d2177d895b4a7f0bdd691108cdb39a7b4bae8095ec1d50a8e84c37acf8110bef10403531a7759dc8fee20abb1e54b7654a0bb898df5d5', 2),
+(34, 'aaaaaaaaaaaaaa@EWewew', 'aaaaaaaaaaaaaa@EWewew', 'aaaaaaaaaaaaaa@EWewew', '1ccc888f4e0f5af51271c07d93df6190d76efe82eeed789780361ee7f5fdae08a58c8c3cbfb10bde68c60f731a7e1e662ca0bb60ec31bbcda4777f85e6c4eb26', 2),
+(35, 'aaaaaaaaaaa@ee', 'aaaaaaaaaaa@ee', 'aaaaaaaaaaa@ee', '47720dfff79df0bb42f3ee6d1f1bf68a4effbbef9f89941f1d67951c2c8cd16c7a4226707e46283c5d2fdd115165220dbf322858fbbf562259d52a29ea5446c0', 2),
+(36, 'cxczxxvcxvc', 'vxcxcvxvcvcx', 'dsdssadsda@sfdsfdfds.fhh', 'd87768cfb7e2cb85cac7b9ca3c46e5c61218212e04dabeed66939e581b8fe14e3efa837c0892fc98e97d0b9f78cb50503f34382d3949989bb637b4a2d9e82a2c', 2),
+(37, 'dsfgertrre@dfsddffs', 'dsfgertrre@dfsddffs', 'dsfgertrre@dfsddffs', 'aa2d411efbed4038872f0dad97a40fb80eeacbcb2a2451b093c0e555d71c1027fb36ca56f53cd6534cf390f27aee434e6e53cc9cbd742931ef1278cda70f5fab', 2),
+(38, 'yogev', 'bar', 'yogbakjfdsjdsfjkjdfks@kjfdlskjsfdkl', '9b08162653e0b5078a7b7d3b9de57cb017040f1a4a9793b7aee47777f55b71e60210aff77bd04d424b9d4b320f998da655454ea7f76072d9ac1237408d616bc1', 2),
+(39, 'sdfsdfsfd', 'sdfsdffsd', 'dfssfdfds@sfdfds', '3183a42172bfe19394f79c4b4df90b793647df076cc8e972a3d7e549b7f2b3bc5b47a185703075da3c0e17b6c5408ded37994916f73830ce20baaba2192bfc46', 2),
+(40, 'sdfsdds', 'sfdfdsfsd', 'DSsdasad@fdfdfdsdsf.com', '4dfdf93c5e2bd2e4a01396ae0e7b74d99d3c4843e06303b61532b552b77908caeb1bc5867be8913fb3c092ec1972ed13911225bddb7cea6d71af654df410204a', 2),
+(41, 'fdsdfd#dffds', 'DSdsds', 'aaaaaaaaaaa@wwww', '1920c2783d4379cef3d1179ce1955bf1de3c6c55c3e2d5ec3a73b94e87ea0e1df934bac171b66969ca50bc0d20aa23f318102b10640e22ff3dc73a069450849f', 2);
 
 -- --------------------------------------------------------
 
@@ -130,9 +173,9 @@ INSERT INTO `vacations` (`vacationId`, `vacationDestination`, `vacationDescripti
 (10, 'Venice', 'A city on water. Drift through canals in gondolas, admire St. Mark\'s Basilica, and savor Venetian cuisine in hidden alleys.\r\n\r\n', '2023-09-07', '2023-09-21', 7500.00, 'Venice.jpeg'),
 (11, 'Hong Kong', 'East-meets-West dynamism. Ascend Victoria Peak, explore bustling markets, and savor a fusion of culinary delights.\r\n\r\n\r\n\r\n\r\n', '2023-08-30', '2023-09-20', 8700.00, 'Hong Kong.jpeg'),
 (12, 'Amsterdam', 'Canals and culture intertwine. Cycle along picturesque waterways, visit Anne Frank House, and admire Van Gogh\'s masterpieces.\r\n\r\n', '2023-10-06', '2023-10-18', 7700.00, 'Amsterdam.jpeg'),
-(13, 'Berlin', 'Layers of history and creativity. Explore Brandenburg Gate, visit East Side Gallery, and indulge in Berlin\'s vibrant nightlife.\r\n\r\n', '2023-10-06', '2023-10-22', 9900.00, 'Berlin.jpeg'),
+(13, 'Berlin', 'Layers of history and creativity. Explore Brandenburg Gate, visit East Side Gallery, and indulge in Berlin\'s vibrant nightlife.\r\n\r\n', '2023-10-04', '2023-10-20', 9900.00, 'Berlin.jpeg'),
 (64, 'Haifa', 'Haifa boasts a picturesque vacation spot, nestled between the stunning Carmel Mountains and the Mediterranean Sea, offering a blend of natural beauty and cultural attractions.', '2023-10-14', '2023-10-28', 1234.00, '3e287e6f-e325-4360-8c52-72da7e2b9820.jpeg'),
-(65, 'Tel Aviv', 'Tel Aviv offers a vibrant and sunny vacation destination, with beautiful beaches, rich cultural experiences, and a lively nightlife', '2023-10-13', '2023-11-11', 3333.00, 'b0e13ffe-1980-488d-a619-8de3cc49e056.jpg'),
+(65, 'Tel Aviv', 'Tel Aviv offers a vibrant and sunny vacation destination, with beautiful beaches, rich cultural experiences, and a lively nightlife', '2023-10-10', '2023-11-08', 3333.00, '83ff26fe-21ae-479b-a63b-cfeb0263c7d9.jpg'),
 (66, 'Jerusalem', 'Jerusalem old city', '2023-10-03', '2023-11-23', 8500.00, '71e0a21e-bea5-410a-9113-f387d5169089.jpeg');
 
 --
@@ -166,13 +209,13 @@ ALTER TABLE `vacations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `vacations`
 --
 ALTER TABLE `vacations`
-  MODIFY `vacationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `vacationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- Constraints for dumped tables

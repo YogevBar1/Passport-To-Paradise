@@ -46,7 +46,7 @@ function Login(): JSX.Element {
                 <input type="password" {...register("password")}
                     required />
 
-                <button>Login</button>
+                <button className="btn btn-primary">Login</button>
 
             </form>
 

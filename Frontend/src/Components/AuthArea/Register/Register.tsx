@@ -56,7 +56,7 @@ function Register(): JSX.Element {
                     max={150}   //Intentionally the limit here on the number of characters is smaller than the limit of characters in the database because I take into account the hashing
                     required />
 
-                <button>Register</button>
+                <button className="btn btn-primary">Register</button>
 
             </form>
 
