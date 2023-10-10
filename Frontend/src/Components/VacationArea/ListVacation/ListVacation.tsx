@@ -57,6 +57,8 @@ function ListVacation(): JSX.Element {
         const loggedUser = authStore.getState().user;
         setUser(loggedUser);
 
+
+
         // Fetch followed vacations for the logged-in user and update component state
         vacationsService
             .getFollowedVacations(loggedUser?.userId)
@@ -72,7 +74,7 @@ function ListVacation(): JSX.Element {
                 setFilteredVacations(backendVacations);
             })
             .catch((err) => notifyService.error(err));
-    }, [vacationDeleted]);
+    }, [navigate, vacationDeleted]);
 
     // Function to convert data to CSV
     function convertToCSV(data: VacationModel[]): string {
@@ -230,14 +232,14 @@ function ListVacation(): JSX.Element {
 
             <div>
                 {user && user.roleId === RoleModel.Admin && (
-                    <button 
-                    onClick={handleDownloadCSV}
-                    className="btn btn-primary"
+                    <button
+                        onClick={handleDownloadCSV}
+                        className="btn btn-primary"
                     >Download CSV file</button>
                 )}
             </div>
 
-            {user && user.roleId == RoleModel.User &&
+            {user && user.roleId === RoleModel.User &&
                 <div >
                     <label>
                         <input
@@ -301,18 +303,22 @@ function ListVacation(): JSX.Element {
             </div>
 
             <h2>Our Vacations</h2>
-            {currentVacations.map((vacation) => (
-                <VacationCard
-                    key={vacation.vacationId}
-                    vacation={vacation}
-                    userId={user.userId}
-                    followersCount={vacation.followersCount}
-                    user={user}
-                    onDelete={handleDeleteVacation}
-                    onUpdateVacations={handleUpdateVacations}
-                />
+            <div className="vacation-cards">
 
-            ))}
+                {currentVacations.map((vacation) => (
+                    <VacationCard
+                        key={vacation.vacationId}
+                        vacation={vacation}
+                        userId={user.userId}
+                        followersCount={vacation.followersCount}
+                        user={user}
+                        onDelete={handleDeleteVacation}
+                        onUpdateVacations={handleUpdateVacations}
+                    />
+
+                ))}
+            </div>
+
             <div className="pagination">
                 <button
                     onClick={() => handlePageChange(currentPage - 1)}

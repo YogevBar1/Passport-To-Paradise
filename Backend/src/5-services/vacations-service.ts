@@ -49,7 +49,6 @@ async function editVacation(vacation: VacationModel): Promise<VacationModel> {
 
     const oldImage = await getOldImage(vacation.vacationId);
 
-
     // If client send image to update:
     if (vacation.image) {
         // If a new image is provided, update it

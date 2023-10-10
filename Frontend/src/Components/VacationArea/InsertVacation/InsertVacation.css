@@ -18,3 +18,7 @@
     color: red;     /* Set text color to red */
     font-weight: bold; /* Set text to bold */
 }
+
+.AddVacation .btn{
+    margin-top: 5px;
+    }

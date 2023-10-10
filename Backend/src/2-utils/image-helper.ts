@@ -54,12 +54,10 @@ async function deleteImage(oldImage: string): Promise<void> {
     catch (err: any) {
         console.log(err.message);
     }
-
 }
 
 export default {
     saveImage,
     updateImage,
     deleteImage
-
 };

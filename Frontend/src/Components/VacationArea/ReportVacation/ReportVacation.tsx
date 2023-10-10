@@ -55,7 +55,7 @@ const ReportVacation = () => {
         
         // Call fetchData when the component mounts
         fetchData();
-    }, []);
+    }, [navigate]);
 
     return (
         <div>

@@ -22,3 +22,17 @@
     background-color: #e74c3c; /* Set your desired color here for the active button */
   }
   
+
+/* Add this CSS to style the vacation card layout with 3 cards in a row */
+.vacation-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  
+  .vacation-card {
+    width: calc(33.33% - 20px); /* Adjust the width and margin as needed */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  

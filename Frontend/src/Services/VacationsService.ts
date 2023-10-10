@@ -3,8 +3,6 @@ import VacationModel from "../Models/VacationModel";
 import { authStore } from "../Redux/AuthState";
 import { VacationAction, VacationsActionType, vacationStore } from "../Redux/VacationState";
 import appConfig from "../Utils/AppConfig";
-import { log } from "console";
-import notifyService from "./NotifyService";
 
 class VacationsService {
 
@@ -50,7 +48,7 @@ class VacationsService {
 
         // Send the edited vacation to the backend
         const response = await axios.put<VacationModel>(
-            appConfig.vacationsUrl + vacation.vacationId, // Assuming this is the endpoint for editing a vacation
+            appConfig.vacationsUrl + vacation.vacationId, 
             vacation,
             options
         );
@@ -66,8 +64,6 @@ class VacationsService {
         vacationStore.dispatch(action);
 
         return editedVacation;
-
-
     }
 
     //Get one Vacation from the backend:

@@ -16,7 +16,8 @@ function EditVacation(): JSX.Element {
     // Initialize state variables
     const [currentImagePreview, setCurrentImagePreview] = useState<string | undefined>("");
 
-    const [selectedImage, setSelectedImage] = useState<File | null>(null);
+    // The new image:
+    const [updatedImagePreview, setUpdatedImagePreview] = useState<File | null>(null);
 
     // Initialize navigate function from react-router-dom to handle page navigation
     const navigate = useNavigate();
@@ -53,16 +54,27 @@ function EditVacation(): JSX.Element {
                 setValue("vacationPrice", backendVacation.vacationPrice);
 
                 // Set current image preview
-                setCurrentImagePreview("http://localhost:4000/api/vacations/" + `${backendVacation.imageUrl}`);
+                // setCurrentImagePreview("http://localhost:4000/api/vacations/" + backendVacation.imageUrl);
+
+                let imageUrl = backendVacation.imageUrl;
+
+                // Check if the URL already has the prefix
+                if (!imageUrl.startsWith("http://localhost:4000/api/vacations/")) {
+                    imageUrl = "http://localhost:4000/api/vacations/" + imageUrl;
+                }
+
+                setCurrentImagePreview(imageUrl);
+
+
             })
             .catch(err => notifyService.error(err));
-    }, [vacationId, setValue]);
+    }, [navigate, vacationId, setValue]);
 
     // Handle image change event
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const imageFile = e.target.files?.[0];
         if (imageFile) {
-            setSelectedImage(imageFile);
+            setUpdatedImagePreview(imageFile);
             const reader = new FileReader();
             reader.onload = () => {
                 setCurrentImagePreview(reader.result as string);
@@ -97,8 +109,8 @@ function EditVacation(): JSX.Element {
 
             vacation.vacationId = vacationId;
 
-            if (selectedImage) {
-                vacation.image = selectedImage;
+            if (updatedImagePreview) {
+                vacation.image = updatedImagePreview;
             } else {
                 vacation.imageUrl = currentImagePreview || "";
             }
@@ -125,12 +137,14 @@ function EditVacation(): JSX.Element {
                     maxLength={50}
                 />
                 <label>Vacation Description:</label>
-                <input
-                    type="text"
+                <textarea
                     {...register("vacationDescription")}
                     required
                     minLength={2}
                     maxLength={250}
+                    rows={8}
+                    style={{ resize: "none" }} // Disable textarea resizing
+
                 />
                 {errors.vacationDescription && (
                     <span className="error">Description must be between 2 and 250 characters.</span>

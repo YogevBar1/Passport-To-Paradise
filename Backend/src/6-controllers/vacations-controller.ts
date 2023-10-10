@@ -13,7 +13,6 @@ const router = express.Router();
 router.post("/vacations", verifyAdmin, async (request: Request, response: Response, next: NextFunction) => {
 
     try {
-
         // Add image from request.files into request.body:
         request.body.image = request.files?.image;
 
@@ -92,7 +91,6 @@ router.delete("/vacations/:id([0-9]+)", verifyAdmin, async (request: Request, re
 router.get("/getFollowedVacations/:userId", verifyToken, async (request: Request, response: Response, next: NextFunction) => {
     try {
         const userId = +request.params.userId;
-
         const followedVacations = await vacationsService.getFollowedVacations(userId);
         response.json(followedVacations);
     }

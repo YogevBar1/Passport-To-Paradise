@@ -8,6 +8,8 @@ import routeNotFound from "./4-middleware/route-not-found";
 import authController from "./6-controllers/auth-controller";
 import followController from "./6-controllers/follow-controller";
 import vacationController from "./6-controllers/vacations-controller";
+import sanitize from "./3-models/sanitize";
+import verbose from "./4-middleware/verbose";
 
 const server = express();
 
@@ -20,6 +22,9 @@ server.use("/api", followController);
 
 server.use(routeNotFound);
 server.use(catchAll);
+server.use(sanitize);
+server.use(verbose);
 
 server.listen(appConfig.port, () => console.log("Listening on http://localhost:" + appConfig.port));
 
+export default server; // Export the 'server' or 'app' object

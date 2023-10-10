@@ -44,7 +44,7 @@ function InsertVacation(): JSX.Element {
             notifyService.error("You don`t have access to this page");
             navigate("/home");
         }
-    }, []);
+    }, [navigate]);
 
     // Function to handle image selection
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,6 +82,22 @@ function InsertVacation(): JSX.Element {
                 return;
             }
 
+            // Trim the values to remove leading and trailing spaces
+            vacation.vacationDestination = vacation.vacationDestination.trim();
+            vacation.vacationDescription = vacation.vacationDescription.trim();
+
+            // Check if the values consist only of spaces or are empty
+            if (vacation.vacationDestination === "" || vacation.vacationDescription === "") {
+                notifyService.error("Vacation destination and description cannot be empty or consist only of spaces.");
+                return;
+            }
+
+            // Check if the value consists of a single regular character followed by spaces
+            if (/^[^\s][\s]*$/.test(vacation.vacationDestination) || /^[^\s][\s]*$/.test(vacation.vacationDescription)) {
+                notifyService.error("Vacation destination and description cannot start with a regular character followed by spaces.");
+                return;
+            }
+
             // Check if a new image was selected
             vacation.image = newImageSelected ? (selectedImage as File) : undefined;
 
@@ -112,13 +128,16 @@ function InsertVacation(): JSX.Element {
                     maxLength={50}
                 />
                 <label>Vacation Description:</label>
-                <input
-                    type="text"
+                <textarea
                     {...register("vacationDescription")}
                     required
                     minLength={2}
                     maxLength={250}
+                    rows={8}
+                    style={{ resize: "none" }} // Disable textarea resizing
+
                 />
+
                 <label>Vacation Start Date: </label>
                 <input
                     type="date"
@@ -169,7 +188,8 @@ function InsertVacation(): JSX.Element {
                         />
                     </div>
                 )}
-                <button>Add Vacation</button>
+                <button className="btn btn-primary">Add Vacation</button>
+
             </form>
         </div>
     );
