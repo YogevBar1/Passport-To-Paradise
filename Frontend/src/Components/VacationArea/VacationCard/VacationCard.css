@@ -69,3 +69,7 @@
     text-align: center;
 }
 
+.formatted-text {
+    white-space: pre-line;
+  }
+  
