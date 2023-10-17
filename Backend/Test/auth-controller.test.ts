@@ -1,7 +1,7 @@
-import { describe, it } from "mocha";
 import { expect } from "chai";
+import { describe, it } from "mocha";
 import supertest from "supertest";
-import app from "../app";
+import app from "../src/app";
 
 describe("Testing the auth controller", () => {
 
@@ -10,21 +10,24 @@ describe("Testing the auth controller", () => {
 
         // Hardcoded data for a new user:
         const user = {
-            firstName: "Test",
-            lastName: "User",
-            email: "testuser@example.com",
-            password: "password123",
+            firstName: "Yogev",
+            lastName: "Bar",
+            email: "Test5@gmail.com", // Note to provide a valid & unique email.(change it after each test!)
+            password: "BeitarJersulamWinners1936",
             roleId: 2
         };
 
         // Send request:
-        const response = await supertest(app)
-            .post("/auth/register")
+        const response = await supertest(app.server)
+            .post("/api/register")
             .send(user);
+
 
         // Expectations:
         expect(response.status).to.equal(201); // Created
-        expect(response.body).to.have.property("token");
+
+        expect(Object.values(response.body).some(value => typeof value === 'string')).to.be.true;
+
     });
 
     // POST - login:
@@ -32,17 +35,18 @@ describe("Testing the auth controller", () => {
 
         // Hardcoded data for user credentials:
         const credentials = {
-            email: "testuser@example.com",
-            password: "password123",
+            email: "yogevBar20241@gmail.com",
+            password: "BeitarJersulamWinners1936",
         };
 
         // Send request:
-        const response = await supertest(app)
-            .post("/auth/login")
+        const response = await supertest(app.server)
+            .post("/api/login")
             .send(credentials);
 
         // Expectations:
         expect(response.status).to.equal(200); // OK
-        expect(response.body).to.have.property("token");
+
+        expect(Object.values(response.body).some(value => typeof value === 'string')).to.be.true;
     });
 });

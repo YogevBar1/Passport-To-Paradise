@@ -57,7 +57,7 @@ function Register(): JSX.Element {
                     required />
 
                 <button className="btn btn-primary">Register</button>
-
+                
             </form>
 
         </div>

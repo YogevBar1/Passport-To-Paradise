@@ -45,7 +45,6 @@ function VacationCard(props: VacationCardProps): JSX.Element {
         // }, [props.vacation.followersCount]); // Add props.vacation.vacationId as a dependency
     }, [props.vacation.vacationId, userId]);
 
-
     // Function to handle follow/unfollow button click
     function handleFollowClick() {
         const followModel: FollowModel = {

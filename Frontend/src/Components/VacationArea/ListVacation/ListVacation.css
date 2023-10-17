@@ -17,11 +17,10 @@
   .pagination button:hover {
     background-color: #2980b9;
   }
-  
+    
   .pagination button.active {
     background-color: #e74c3c; /* Set your desired color here for the active button */
-  }
-  
+  }  
 
 /* Add this CSS to style the vacation card layout with 3 cards in a row */
 .vacation-cards {

@@ -10,7 +10,6 @@ function sanitize(request: Request, response: Response, next: NextFunction) {
     }
 
     next();
-    
 }
 
 export default sanitize;

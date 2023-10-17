@@ -57,8 +57,6 @@ function ListVacation(): JSX.Element {
         const loggedUser = authStore.getState().user;
         setUser(loggedUser);
 
-
-
         // Fetch followed vacations for the logged-in user and update component state
         vacationsService
             .getFollowedVacations(loggedUser?.userId)

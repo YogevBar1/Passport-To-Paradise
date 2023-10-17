@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2023 at 04:37 PM
+-- Generation Time: Oct 11, 2023 at 12:09 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -167,16 +167,16 @@ INSERT INTO `vacations` (`vacationId`, `vacationDestination`, `vacationDescripti
 (3, 'Madrid', 'In the heart of Spain, Madrid stands as a dynamic blend of history and modernity. With its royal palaces, world-renowned art museums like the Prado and Reina Sofía, and a thriving culinary scene offering tapas to haute cuisine.', '2023-08-22', '2023-08-31', 4000.00, 'madrid.jpg'),
 (5, 'Budapest', 'Budapest, a tapestry of history and thermal wonders. Explore Buda Castle, soak in Széchenyi Baths, and cruise the Danube for panoramic views. Budapest\'s charm lies in its architectural gems, both Gothic and Art Nouveau, and a vibrant nightlife along ', '2023-09-22', '2023-10-02', 4550.00, 'Budapest.jpg'),
 (6, 'Prague', 'Prague, a fairytale city. Wander Charles Bridge, admire Prague Castle\'s grandeur, and embrace Old Town\'s charm. Unveil history in every cobblestone.', '2023-08-22', '2023-08-31', 5555.00, 'Prague‪.jpeg'),
-(7, 'Tokyo', 'A blend of tradition and technology. Explore Senso-ji Temple, Shibuya Crossing, and savor sushi at Tsukiji Market.', '2023-08-30', '2023-09-11', 4800.00, '67d11011-5ac6-4172-889e-064de15468a6.jpeg'),
+(7, 'Tokyo', 'A blend of tradition and technology. Explore Senso-ji Temple, Shibuya Crossing, and savor sushi at Tsukiji Market.', '2023-08-29', '2023-09-10', 4800.00, '542029eb-cd45-4306-8852-20de8a1b5e6c.jpeg'),
 (8, 'Rome', 'The Eternal City\'s allure. Marvel at the Colosseum, toss coins in Trevi Fountain, and relish pasta in charming trattorias.\r\n\r\n', '2023-08-30', '2023-09-10', 5800.00, 'Rome.jpeg'),
-(9, 'Cape Town', 'A tapestry of landscapes. Ascend Table Mountain, explore Robben Island\'s history, and unwind on Camps Bay\'s shores.\r\n\r\n\r\n\r\n\r\n', '2023-10-05', '2023-11-01', 8800.00, 'Cape Town.jpeg'),
+(9, 'Cape Town', 'A tapestry of landscapes. Ascend Table Mountain, explore Robben Island\'s history, and unwind on Camps Bay\'s shores.', '2023-10-04', '2023-10-31', 8800.00, 'Cape Town.jpeg'),
 (10, 'Venice', 'A city on water. Drift through canals in gondolas, admire St. Mark\'s Basilica, and savor Venetian cuisine in hidden alleys.\r\n\r\n', '2023-09-07', '2023-09-21', 7500.00, 'Venice.jpeg'),
-(11, 'Hong Kong', 'East-meets-West dynamism. Ascend Victoria Peak, explore bustling markets, and savor a fusion of culinary delights.\r\n\r\n\r\n\r\n\r\n', '2023-08-30', '2023-09-20', 8700.00, 'Hong Kong.jpeg'),
+(11, 'Hong Kong', 'East-meets-West dynamism. Ascend Victoria Peak, explore bustling markets, and savor a fusion of culinary delights.', '2023-08-29', '2023-09-19', 8700.00, 'Hong Kong.jpeg'),
 (12, 'Amsterdam', 'Canals and culture intertwine. Cycle along picturesque waterways, visit Anne Frank House, and admire Van Gogh\'s masterpieces.\r\n\r\n', '2023-10-06', '2023-10-18', 7700.00, 'Amsterdam.jpeg'),
 (13, 'Berlin', 'Layers of history and creativity. Explore Brandenburg Gate, visit East Side Gallery, and indulge in Berlin\'s vibrant nightlife.\r\n\r\n', '2023-10-04', '2023-10-20', 9900.00, 'Berlin.jpeg'),
 (64, 'Haifa', 'Haifa boasts a picturesque vacation spot, nestled between the stunning Carmel Mountains and the Mediterranean Sea, offering a blend of natural beauty and cultural attractions.', '2023-10-14', '2023-10-28', 1234.00, '3e287e6f-e325-4360-8c52-72da7e2b9820.jpeg'),
 (65, 'Tel Aviv', 'Tel Aviv offers a vibrant and sunny vacation destination, with beautiful beaches, rich cultural experiences, and a lively nightlife', '2023-10-10', '2023-11-08', 3333.00, '83ff26fe-21ae-479b-a63b-cfeb0263c7d9.jpg'),
-(66, 'Jerusalem', 'Jerusalem old city', '2023-10-03', '2023-11-23', 8500.00, '71e0a21e-bea5-410a-9113-f387d5169089.jpeg');
+(66, 'Jerusalem', 'Jerusalem, often referred to as the \"City of Gold,\" is a captivating destination for travelers seeking a unique blend of rich history, culture, and spirituality. This ancient city holds immense significance for three major religions—Judaism, Christia', '2023-10-02', '2023-11-22', 8500.00, '71e0a21e-bea5-410a-9113-f387d5169089.jpeg');
 
 --
 -- Indexes for dumped tables

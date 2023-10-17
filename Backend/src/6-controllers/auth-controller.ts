@@ -19,7 +19,6 @@ router.post("/register", async (request: Request, response: Response, next: Next
 
         // Response back the token
         response.status(StatusCode.Created).json(token);
-
     }
     catch (err: any) {
         next(err);
@@ -38,7 +37,6 @@ router.post("/login", async (request: Request, response: Response, next: NextFun
 
         // Response back the token
         response.json(token);
-
     }
     catch (err: any) {
         next(err);

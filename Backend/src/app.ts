@@ -16,15 +16,16 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 server.use(expressFileUpload());
+server.use(verbose);
+server.use(sanitize);
+
 server.use("/api", authController);
 server.use("/api", vacationController);
 server.use("/api", followController);
 
 server.use(routeNotFound);
 server.use(catchAll);
-server.use(sanitize);
-server.use(verbose);
 
 server.listen(appConfig.port, () => console.log("Listening on http://localhost:" + appConfig.port));
 
-export default server; // Export the 'server' or 'app' object
+export default {server}; // Export the 'server' instance

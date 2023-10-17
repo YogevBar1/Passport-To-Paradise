@@ -7,7 +7,6 @@ export class AuthState {
     public token: string = null; // JWT.
     public user: UserModel = null; // The user.
 
-
     public constructor() {
         this.token = sessionStorage.getItem("token");
         if (this.token) {

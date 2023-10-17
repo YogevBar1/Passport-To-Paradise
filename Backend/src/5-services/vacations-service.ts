@@ -7,6 +7,7 @@ import VacationModel from "../3-models/vacation-model";
 
 // Get vacations followed by a user:
 async function getVacationsFollowedByUser(userId: number) {
+
     const sql = `SELECT vacations.*
     FROM vacations
     INNER JOIN followers ON vacations.vacationId = followers.vacationId
@@ -27,14 +28,21 @@ async function addVacation(newVacation: VacationModel): Promise<VacationModel> {
     if (!newVacation.image) throw new ValidationError("Please add an image.");
 
     const imageName = await imageHelper.saveImage(newVacation.image);
-    const sql = `INSERT INTO vacations VALUES(DEFAULT, ?, ?, ?, ?, ?, ?)`; // Defend sql injection.
+
+    // Defend sql injection.
+    const sql = `INSERT INTO vacations VALUES(DEFAULT, ?, ?, ?, ?, ?, ?)`;
     const info: OkPacket = await dal.execute(sql,
         [newVacation.vacationDestination, newVacation.vacationDescription, newVacation.vacationStartDate, newVacation.vacationEndDate,
         newVacation.vacationPrice, imageName]);
-    newVacation.vacationId = info.insertId; // Generate unique id.
 
-    newVacation.imageUrl = `${appConfig.domainName}/api/vacations/${imageName}`; // Create reference for the image file.
-    delete newVacation.image; // Remove the image object from the new vacation.
+    // Generate unique id.
+    newVacation.vacationId = info.insertId;
+
+    // Create reference for the image file.
+    newVacation.imageUrl = `${appConfig.domainName}/api/vacations/${imageName}`;
+    
+    // Remove the image object from the new vacation.
+    delete newVacation.image;
 
     return newVacation;
 }
@@ -83,7 +91,6 @@ async function editVacation(vacation: VacationModel): Promise<VacationModel> {
             WHERE vacationId = ?
                 `;
         values.push(vacation.vacationDestination, vacation.vacationDescription, vacation.vacationStartDate, vacation.vacationEndDate, vacation.vacationPrice, vacation.vacationId);
-
     }
 
     // Execute sql, get back info object:
@@ -158,7 +165,6 @@ async function getFollowedVacations(userId: number): Promise<VacationModel[]> {
     const vacations = await dal.execute(sql, [userId]);
     return vacations;
 }
-
 
 async function getOneVacation(vacationId: number): Promise<VacationModel> {
     const sql = `

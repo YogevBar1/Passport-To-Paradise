@@ -18,7 +18,6 @@ router.post("/follow", verifyToken, async (request: Request, response: Response,
 
         // Respond with a success message or status code
         response.status(200).json({ message: `User ${follow.userId} followed vacation ${follow.vacationId} successfully` });
-
     }
     catch (err: any) {
         next(err);
@@ -29,20 +28,17 @@ router.post("/follow", verifyToken, async (request: Request, response: Response,
 router.delete("/unfollow", verifyToken, async (request: Request, response: Response, next: NextFunction) => {
 
     const unFollow = new FollowModel(request.body);
-
     try {
         // Call the userFollow function from your service to delete the follow
         await followService.userUnFollow(unFollow);
 
         // Respond with a success message or status code
         response.status(200).json({ message: `User ${unFollow.userId} unFollowed vacation ${unFollow.vacationId} successfully` });
-
     }
     catch (err: any) {
         next(err);
     }
 });
-
 
 // GET "http://localhost:4000/checkIfUserIsFollowing/:userId/:vacationId"
 router.get("/checkIfUserIsFollowing/:userId([0-9]+)/:vacationId([0-9]+)", verifyToken, async (request: Request, response: Response, next: NextFunction) => {

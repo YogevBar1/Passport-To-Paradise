@@ -11,7 +11,8 @@ import "./EditVacation.css";
 function EditVacation(): JSX.Element {
     // Initialize useForm from react-hook-form to manage form state
     const { watch } = useForm<VacationModel>();
-    const { register, handleSubmit, setValue, formState: { errors } } = useForm<VacationModel>(); // Destructure the errors object
+    // Destructure the errors object
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm<VacationModel>();
 
     // Initialize state variables
     const [currentImagePreview, setCurrentImagePreview] = useState<string | undefined>("");
@@ -53,9 +54,6 @@ function EditVacation(): JSX.Element {
                 setValue("vacationEndDate", backendVacation.vacationEndDate.toString().split("T")[0]);
                 setValue("vacationPrice", backendVacation.vacationPrice);
 
-                // Set current image preview
-                // setCurrentImagePreview("http://localhost:4000/api/vacations/" + backendVacation.imageUrl);
-
                 let imageUrl = backendVacation.imageUrl;
 
                 // Check if the URL already has the prefix
@@ -64,8 +62,6 @@ function EditVacation(): JSX.Element {
                 }
 
                 setCurrentImagePreview(imageUrl);
-
-
             })
             .catch(err => notifyService.error(err));
     }, [navigate, vacationId, setValue]);

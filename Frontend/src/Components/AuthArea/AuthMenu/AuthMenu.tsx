@@ -10,7 +10,6 @@ import "./AuthMenu.css";
  * AuthMenu component displays the navigation menu based on the user's authentication status.
  * It provides options to log in, register, log out, and access the vacation list.
  */
-
 function AuthMenu(): JSX.Element {
     // Initialize user state using the AuthState store
     const [user, setUser] = useState<UserModel>();
@@ -22,9 +21,7 @@ function AuthMenu(): JSX.Element {
         return unsubscribe;
     }, []);
 
-    /**
-  * Logs the user out of the application.
-  */
+    //Logs the user out of the application.
     function logoutMe(): void {
         authService.logout();
         notifyService.success("Bye Bye...");
@@ -32,7 +29,6 @@ function AuthMenu(): JSX.Element {
 
     return (
         <div className="AuthMenu">
-
             {!user &&
                 <div>
                     <span>Hello Guest | </span>
@@ -51,7 +47,6 @@ function AuthMenu(): JSX.Element {
 
                 </div>
             }
-
         </div>
     );
 }

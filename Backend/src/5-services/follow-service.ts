@@ -1,9 +1,8 @@
 import dal from "../2-utils/dal";
 import FollowModel from "../3-models/follow-model";
 
-// user make follow on vacation
+// User make follow on vacation
 async function userFollow(follow: FollowModel): Promise<void> {
-
     const sql = `
     INSERT INTO followers (userId, vacationId)
     VALUES (?, ?)
@@ -18,7 +17,7 @@ async function userFollow(follow: FollowModel): Promise<void> {
     }
 }
 
-// user make unFollow on vacation
+// User make unFollow on vacation
 async function userUnFollow(follow: FollowModel): Promise<void> {
     const sql = `
         DELETE FROM followers
@@ -42,7 +41,7 @@ async function userUnFollow(follow: FollowModel): Promise<void> {
 
 }
 
-// Is the user follow the vacation
+// Is the user follow the vacation?
 async function checkIfUserIsFollowing(userId: number, vacationId: number): Promise<boolean> {
     const sql = `
     SELECT *

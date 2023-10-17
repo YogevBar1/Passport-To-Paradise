@@ -74,7 +74,6 @@ async function login(credentials: CredentialsModel): Promise<string>{
 
     // Return token
     return token;
-
 }
 
 // Is Email taken:

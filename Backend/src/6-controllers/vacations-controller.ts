@@ -28,7 +28,6 @@ router.post("/vacations", verifyAdmin, async (request: Request, response: Respon
     catch (err: any) {
         next(err);
     }
-
 });
 
 // Get vacations that followed by the user
@@ -40,15 +39,15 @@ router.get("/vacationsFollowedByUserId/:userId([0-9]+)", verifyToken, async (req
         const vacationsFollowedByUSer = await vacationsService.getVacationsFollowedByUser(userId);
         response.json(vacationsFollowedByUSer);
     }
-    catch (err: any) { next(err); }
-
+    catch (err: any) {
+        next(err);
+    }
 });
 
 // PUT "http://localhost:4000/vacations/:vacationId
 router.put("/vacations/:vacationId([0-9]+)", verifyAdmin, async (request: Request, response: Response, next: NextFunction) => {
 
     try {
-
         // Extract route id into body:
         request.body.vacationId = +request.params.vacationId;
 
@@ -63,7 +62,6 @@ router.put("/vacations/:vacationId([0-9]+)", verifyAdmin, async (request: Reques
 
         //Response back the added vacation
         response.json(updatedVacation);
-
     }
     catch (err: any) {
         next(err);
@@ -94,8 +92,9 @@ router.get("/getFollowedVacations/:userId", verifyToken, async (request: Request
         const followedVacations = await vacationsService.getFollowedVacations(userId);
         response.json(followedVacations);
     }
-    catch (err: any) { next(err); }
-
+    catch (err: any) {
+        next(err);
+    }
 });
 
 // Get all vacation Image
@@ -112,14 +111,15 @@ router.get("/vacations/:imageUrl", async (request: Request, response: Response, 
         // Response back the file
         response.sendFile(absolutePath);
     }
-    catch (err: any) { next(err); }
-
+    catch (err: any) {
+        next(err);
+    }
 });
 
 // Get "http://localhost:4000/vacationsById/:vacationId"
 router.get("/vacationsById/:vacationId([0-9]+)", verifyToken, async (request: Request, response: Response, next: NextFunction) => {
 
-    try {        
+    try {
         // Get route id:
         const vacationId = +request.params.vacationId;
 
@@ -128,7 +128,6 @@ router.get("/vacationsById/:vacationId([0-9]+)", verifyToken, async (request: Re
 
         //Response back desired vacation
         response.json(vacation);
-
     }
     catch (err: any) {
         next(err);
