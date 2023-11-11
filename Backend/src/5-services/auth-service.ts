@@ -24,7 +24,7 @@ async function register(user: UserModel): Promise<string> {
     // Check password strength( 1 is the lowest)
     const passwordStrength = zxcvbn(user.password);
 
-    if (passwordStrength.score <= 1) {
+    if (passwordStrength.score <= 0) {
         throw new ValidationError('Password is not strong enough');
     }
 

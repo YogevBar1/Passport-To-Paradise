@@ -159,6 +159,7 @@ function ListVacation(): JSX.Element {
         setCurrentPage(1);
     };
 
+
     const currentVacations = filteredVacations.slice(
         indexOfFirstVacation,
         indexOfLastVacation

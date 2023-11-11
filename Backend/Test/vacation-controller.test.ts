@@ -7,7 +7,6 @@ import supertest from "supertest";
 import router from "../src/6-controllers/vacations-controller";
 import app from "../src/app";
 
-
 describe("Testing the vacation controller", () => {
     // Store the token in a variable
     const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MTYsImZpcnN0TmFtZSI6IkdhYnkiLCJsYXN0TmFtZSI6IkJhciIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsInJvbGVJZCI6MX0sImlhdCI6MTY5NzUyODE4NCwiZXhwIjoxNjk3NTM4OTg0fQ.3iYD542LfUKyimE4t4tr_P6hYTKczU8nML-4DtOJC_c";

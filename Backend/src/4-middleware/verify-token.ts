@@ -10,8 +10,6 @@ function verifyToken(request: Request , response: Response, next: NextFunction):
     // Extract the token
     const token = authorizationHeader?.substring(7);
 
-    console.log(token);
-
     // Verify token
     cyber.verifyToken(token);
 

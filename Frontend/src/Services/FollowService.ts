@@ -13,7 +13,6 @@ class FollowService {
 
         } catch (err: any) {
             console.error('Error following vacation:', err.message);
-            // You can handle the error here, display an error message, or perform any other necessary actions.
         }
     }
 
