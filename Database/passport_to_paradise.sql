@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2023 at 12:09 PM
+-- Generation Time: Nov 13, 2023 at 09:23 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,12 +41,10 @@ CREATE TABLE `followers` (
 INSERT INTO `followers` (`userId`, `vacationId`) VALUES
 (15, 5),
 (7, 9),
-(27, 6),
 (27, 5),
 (25, 3),
 (25, 8),
 (28, 3),
-(29, 6),
 (29, 3),
 (29, 9),
 (29, 65),
@@ -55,8 +53,6 @@ INSERT INTO `followers` (`userId`, `vacationId`) VALUES
 (33, 11),
 (33, 7),
 (33, 8),
-(33, 6),
-(34, 6),
 (34, 3),
 (34, 11),
 (34, 7),
@@ -69,12 +65,10 @@ INSERT INTO `followers` (`userId`, `vacationId`) VALUES
 (34, 13),
 (34, 65),
 (34, 64),
-(35, 6),
 (36, 64),
 (38, 3),
 (38, 5),
 (38, 9),
-(38, 6),
 (38, 11),
 (39, 8),
 (39, 11),
@@ -83,7 +77,13 @@ INSERT INTO `followers` (`userId`, `vacationId`) VALUES
 (41, 7),
 (41, 13),
 (41, 66),
-(41, 5);
+(41, 5),
+(44, 11),
+(44, 10),
+(44, 66),
+(44, 5),
+(44, 13),
+(44, 8);
 
 -- --------------------------------------------------------
 
@@ -141,7 +141,13 @@ INSERT INTO `users` (`userId`, `firstName`, `lastName`, `email`, `password`, `ro
 (38, 'yogev', 'bar', 'yogbakjfdsjdsfjkjdfks@kjfdlskjsfdkl', '9b08162653e0b5078a7b7d3b9de57cb017040f1a4a9793b7aee47777f55b71e60210aff77bd04d424b9d4b320f998da655454ea7f76072d9ac1237408d616bc1', 2),
 (39, 'sdfsdfsfd', 'sdfsdffsd', 'dfssfdfds@sfdfds', '3183a42172bfe19394f79c4b4df90b793647df076cc8e972a3d7e549b7f2b3bc5b47a185703075da3c0e17b6c5408ded37994916f73830ce20baaba2192bfc46', 2),
 (40, 'sdfsdds', 'sfdfdsfsd', 'DSsdasad@fdfdfdsdsf.com', '4dfdf93c5e2bd2e4a01396ae0e7b74d99d3c4843e06303b61532b552b77908caeb1bc5867be8913fb3c092ec1972ed13911225bddb7cea6d71af654df410204a', 2),
-(41, 'fdsdfd#dffds', 'DSdsds', 'aaaaaaaaaaa@wwww', '1920c2783d4379cef3d1179ce1955bf1de3c6c55c3e2d5ec3a73b94e87ea0e1df934bac171b66969ca50bc0d20aa23f318102b10640e22ff3dc73a069450849f', 2);
+(41, 'fdsdfd#dffds', 'DSdsds', 'aaaaaaaaaaa@wwww', '1920c2783d4379cef3d1179ce1955bf1de3c6c55c3e2d5ec3a73b94e87ea0e1df934bac171b66969ca50bc0d20aa23f318102b10640e22ff3dc73a069450849f', 2),
+(42, 'שששש', 'ששששa', 'aaaa@dasdsa.com', 'a1a1c3a66826c381f574482a4a5e8a85e22e9ba3f6957f3ff8f65c920026d61dd5c316c5d80cca0da72588802a2f496f8870add8d2faf504e3b3caa71b3b159a', 2),
+(43, 'aaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 'aaaaaaaa@eeeee.ccc', '956fe87975ed274de1bc9388f721ae81f516e45a4bbe37124315687c83e4580f3e74fc825912866fa4d9fe9d4a2880a5aacd860b90fb969e547cceddcb506cb3', 2),
+(44, 'aaaaaaaaaaaa', 'aaaaaaaaaaaa', 'aaaaaaaaaaa@dsdsdf.com', 'd8e57448140bd4e0e66fc80e1dbdad8e81be36e1e14ff75eef5e1d4effebccd9991b10f6a092ff85f3a15569582b51a81513f88a9d5af69a664c6ba2195cec6a', 2),
+(45, 'sfdfdsfd', 'ddfsfd', 'sdadsa@sdadsa.xom', '4ef8b5498745cc24d9d3fb67209dfb37127683e9af57c27108bdf9cde85021b817abd9aa497ee75c6ae0c006189d9f96406d4dbb11b6a030fcd33eacfe089232', 2),
+(46, 'Regular', 'User', 'user@gmail.com', '2d6aff9da366409c6196393aa5579afd3fbf441f2e1e3c7c8a86193eca30081d643ba9d9e15726072d0e82a41f3f55a8b5f65c71bd0d11c1508891c8104a04a7', 2),
+(47, 'admin', 'admin', 'admin3@gmail.com', 'd717e52428e876b12a42936cf89835fb05c2995edb1c73b157a1faec73e743964e1b2f4dfd9939acb6bc906e5fb3fca2a42a9bb66a2d6362598f3df1c873516f', 1);
 
 -- --------------------------------------------------------
 
@@ -166,7 +172,6 @@ CREATE TABLE `vacations` (
 INSERT INTO `vacations` (`vacationId`, `vacationDestination`, `vacationDescription`, `vacationStartDate`, `vacationEndDate`, `vacationPrice`, `imageUrl`) VALUES
 (3, 'Madrid', 'In the heart of Spain, Madrid stands as a dynamic blend of history and modernity. With its royal palaces, world-renowned art museums like the Prado and Reina Sofía, and a thriving culinary scene offering tapas to haute cuisine.', '2023-08-22', '2023-08-31', 4000.00, 'madrid.jpg'),
 (5, 'Budapest', 'Budapest, a tapestry of history and thermal wonders. Explore Buda Castle, soak in Széchenyi Baths, and cruise the Danube for panoramic views. Budapest\'s charm lies in its architectural gems, both Gothic and Art Nouveau, and a vibrant nightlife along ', '2023-09-22', '2023-10-02', 4550.00, 'Budapest.jpg'),
-(6, 'Prague', 'Prague, a fairytale city. Wander Charles Bridge, admire Prague Castle\'s grandeur, and embrace Old Town\'s charm. Unveil history in every cobblestone.', '2023-08-22', '2023-08-31', 5555.00, 'Prague‪.jpeg'),
 (7, 'Tokyo', 'A blend of tradition and technology. Explore Senso-ji Temple, Shibuya Crossing, and savor sushi at Tsukiji Market.', '2023-08-29', '2023-09-10', 4800.00, '542029eb-cd45-4306-8852-20de8a1b5e6c.jpeg'),
 (8, 'Rome', 'The Eternal City\'s allure. Marvel at the Colosseum, toss coins in Trevi Fountain, and relish pasta in charming trattorias.\r\n\r\n', '2023-08-30', '2023-09-10', 5800.00, 'Rome.jpeg'),
 (9, 'Cape Town', 'A tapestry of landscapes. Ascend Table Mountain, explore Robben Island\'s history, and unwind on Camps Bay\'s shores.', '2023-10-04', '2023-10-31', 8800.00, 'Cape Town.jpeg'),
@@ -176,7 +181,8 @@ INSERT INTO `vacations` (`vacationId`, `vacationDestination`, `vacationDescripti
 (13, 'Berlin', 'Layers of history and creativity. Explore Brandenburg Gate, visit East Side Gallery, and indulge in Berlin\'s vibrant nightlife.\r\n\r\n', '2023-10-04', '2023-10-20', 9900.00, 'Berlin.jpeg'),
 (64, 'Haifa', 'Haifa boasts a picturesque vacation spot, nestled between the stunning Carmel Mountains and the Mediterranean Sea, offering a blend of natural beauty and cultural attractions.', '2023-10-14', '2023-10-28', 1234.00, '3e287e6f-e325-4360-8c52-72da7e2b9820.jpeg'),
 (65, 'Tel Aviv', 'Tel Aviv offers a vibrant and sunny vacation destination, with beautiful beaches, rich cultural experiences, and a lively nightlife', '2023-10-10', '2023-11-08', 3333.00, '83ff26fe-21ae-479b-a63b-cfeb0263c7d9.jpg'),
-(66, 'Jerusalem', 'Jerusalem, often referred to as the \"City of Gold,\" is a captivating destination for travelers seeking a unique blend of rich history, culture, and spirituality. This ancient city holds immense significance for three major religions—Judaism, Christia', '2023-10-02', '2023-11-22', 8500.00, '71e0a21e-bea5-410a-9113-f387d5169089.jpeg');
+(66, 'Jerusalem', 'Jerusalem, often referred to as the \"City of Gold,\" is a captivating destination for travelers seeking a unique blend of rich history, culture, and spirituality. This ancient city holds immense significance for three major religions—Judaism, Christia', '2023-10-02', '2023-11-22', 8500.00, '71e0a21e-bea5-410a-9113-f387d5169089.jpeg'),
+(70, 'Pristina', 'Discover the vibrant charm of Pristina, Kosovo\'s capital. Wander through the Old Town\'s mix of Ottoman and modern influences, admire the Newborn monument, and savor local delicacies like flija and qebapa. Dive into history at the Kosovo Museum, or es', '2023-11-14', '2023-11-29', 3332.99, 'be4e9538-7e10-4a0f-abbe-abd587c7bd95.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -209,13 +215,13 @@ ALTER TABLE `vacations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `vacations`
 --
 ALTER TABLE `vacations`
-  MODIFY `vacationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `vacationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- Constraints for dumped tables

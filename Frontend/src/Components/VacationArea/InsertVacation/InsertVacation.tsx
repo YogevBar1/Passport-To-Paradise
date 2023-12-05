@@ -163,7 +163,7 @@ function InsertVacation(): JSX.Element {
                     step="0.01"
                     {...register("vacationPrice")}
                     required
-                    min="0"
+                    min="50"
                     max="9999.99"
                 />
                 <label>Image: </label>

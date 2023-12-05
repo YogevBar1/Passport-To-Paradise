@@ -11,7 +11,7 @@ import RoleModel from "../../../Models/RoleModel";
 
 /**
  * The `ListVacation` component displays a list of vacations, with filtering options for users.
- * Administrators can view all vacations, download vacation data as a CSV file, and add new vacations.
+ * Administr-ators can view all vacations, download vacation data as a CSV file, and add new vacations.
  * Users can filter vacations by followed status, upcoming start dates, and currently active vacations.
  * Users can also view and interact with vacation cards, including following/unfollowing vacations.
  */
@@ -96,6 +96,7 @@ function ListVacation(): JSX.Element {
     // Calculate the index of the first vacation to display on the current page
     const indexOfFirstVacation = indexOfLastVacation - vacationsPerPage;
 
+    // Here i take care of the filters:
     // Function to filter vacations based on the checkbox state
     const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, checked } = e.target;
@@ -158,7 +159,6 @@ function ListVacation(): JSX.Element {
         setFilteredVacations(filteredVacationsByCheckbox);
         setCurrentPage(1);
     };
-
 
     const currentVacations = filteredVacations.slice(
         indexOfFirstVacation,
